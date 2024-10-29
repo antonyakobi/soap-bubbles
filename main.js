@@ -12,18 +12,26 @@ const scores = [60, 50, 60, 58, 54, 54,
 // Highest bubble score: 69
 // Solutons with highest score: #11, #18
 
-let i = 0
 let output 
-
-// while (i < scores.length) {
-//     output = "Bubble solution #" + i + " score: " + scores[i]
-//     console.log(output);
-//     i = i + 1
-// }
+let highScore = 0
 
 for (let i = 0; i < scores.length; i++) {
     output = "Bubble solution #" + i + " score: " + scores[i]
     console.log(output);
+    if (highScore < scores[i]) {
+        highScore = scores[i]
+    }
 }
 
 console.log("bubble tests: " + scores.length);
+console.log("Highest bubble score: " + highScore);
+
+const bestSolutions = []
+
+for (let i = 0; i < scores.length; i++) {
+    if (scores[i] === highScore) {
+        bestSolutions.push(i)
+    }
+}
+
+console.log("Solutons with highest score: " + bestSolutions);
